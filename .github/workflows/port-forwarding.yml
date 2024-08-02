@@ -1,0 +1,17 @@
+name: TCP Port Forwarding
+
+on: [push]
+
+jobs:
+  port-forward:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH forwarding
+      run: |
+        ssh -o "StrictHostKeyChecking no" -R 0.0.0.0:2222:localhost:22 serveo.net
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
