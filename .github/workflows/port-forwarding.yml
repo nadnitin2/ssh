@@ -1,6 +1,9 @@
 name: TCP Port Forwarding
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   port-forward:
