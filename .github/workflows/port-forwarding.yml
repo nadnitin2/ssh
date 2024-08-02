@@ -15,6 +15,6 @@ jobs:
 
     - name: Set up SSH forwarding
       run: |
-        ssh -o "StrictHostKeyChecking no" -R 0.0.0.0:2222:localhost:22 serveo.net
+        ssh -o "StrictHostKeyChecking no" -R 0.0.0.0:2233:localhost:22 serveo.net
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
